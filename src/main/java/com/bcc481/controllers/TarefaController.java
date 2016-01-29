@@ -32,9 +32,11 @@ public class TarefaController {
 
     @RequestMapping(value = "tarefa", method = RequestMethod.POST)
     public String saveTarefa(Tarefa tarefa){
+
         tarefaService.saveTarefa(tarefa);
 
-        return "redirect:/tarefa/" + tarefa.getId();
+        //return "redirect:/tarefa/" + tarefa.getId();
+        return "ok";
     }
 
     @RequestMapping("tarefa/{id}")

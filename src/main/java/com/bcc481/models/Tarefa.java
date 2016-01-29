@@ -11,6 +11,7 @@ import java.util.Calendar;
 
 @Entity
 public class Tarefa {
+
     @Id
     @GeneratedValue
     private Long id;
@@ -19,7 +20,7 @@ public class Tarefa {
 
     private boolean finalizado = false;
 
-    private Calendar dataFinalizacao;
+    //private Calendar dataFinalizacao;
 
     @Override
     public String toString(){
@@ -53,11 +54,11 @@ public class Tarefa {
         this.finalizado = finalizado;
     }
 
-    public Calendar getDataFinalizacao() {
-        return dataFinalizacao;
-    }
-
-    public void setDataFinalizacao(Calendar dataFinalizacao) {
-        this.dataFinalizacao = dataFinalizacao;
-    }
+//    public Calendar getDataFinalizacao() {
+//        return dataFinalizacao;
+//    }
+//
+//    public void setDataFinalizacao(Calendar dataFinalizacao) {
+//        this.dataFinalizacao = dataFinalizacao;
+//    }
 }

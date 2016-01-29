@@ -20,7 +20,7 @@ public class Tarefa {
     private boolean finalizado = false;
 
     private Calendar dataFinalizacao;
-    
+
     @Override
     public String toString(){
         return String.format(

@@ -1,8 +1,8 @@
 package com.bcc481.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import javax.persistence.*;
 import java.util.Calendar;
 
 /**
@@ -20,12 +20,14 @@ public class Tarefa {
 
     private boolean finalizado = false;
 
-    //private Calendar dataFinalizacao;
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "dd/mm/YYYY")
+    private Calendar dataFinalizacao;
 
     @Override
     public String toString(){
         return String.format(
-                "Tarefa '%s'", this.descricao
+                "Tarefa: '%s', ID: %d, ", this.descricao, this.id
         );
 
     }
@@ -54,11 +56,11 @@ public class Tarefa {
         this.finalizado = finalizado;
     }
 
-//    public Calendar getDataFinalizacao() {
-//        return dataFinalizacao;
-//    }
-//
-//    public void setDataFinalizacao(Calendar dataFinalizacao) {
-//        this.dataFinalizacao = dataFinalizacao;
-//    }
+    public Calendar getDataFinalizacao() {
+        return dataFinalizacao;
+    }
+
+    public void setDataFinalizacao(Calendar dataFinalizacao) {
+        this.dataFinalizacao = dataFinalizacao;
+    }
 }

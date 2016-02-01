@@ -72,7 +72,7 @@ public class TarefaController {
     public String showTarefa(@PathVariable Long id, Model model){
         model.addAttribute("tarefa", tarefaService.getTarefaById(id));
         return "tarefashow";
-    }
+    } 
 
 
 }

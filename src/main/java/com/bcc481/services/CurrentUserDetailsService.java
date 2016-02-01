@@ -1,6 +1,5 @@
 package com.bcc481.services;
 
-import com.bcc481.models.CurrentUser;
 import com.bcc481.models.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

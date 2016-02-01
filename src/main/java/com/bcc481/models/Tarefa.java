@@ -1,10 +1,8 @@
 package com.bcc481.models;
 
-import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.util.Calendar;
 
 /**
@@ -18,14 +16,12 @@ public class Tarefa {
     @GeneratedValue
     private Long id;
 
-    @NotNull
-    @NotBlank(message = "A descrição não pode ser nula")
     private String descricao;
 
     private boolean finalizado = false;
 
     @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "dd/mm/YYYY")
     private Calendar dataFinalizacao;
 
     @Override

@@ -9,4 +9,5 @@ public interface TarefaService {
     Iterable<Tarefa> listAllTarefas();
     Tarefa getTarefaById(Long id);
     Tarefa saveTarefa(Tarefa tarefa);
+    void deleteTarefa(Long id);
 }

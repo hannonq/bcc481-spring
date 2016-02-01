@@ -36,10 +36,10 @@
             <td th:text="${tarefa.finalizado}"></td>
             <td th:text="${#calendars.format(tarefa.dataFinalizacao)}"></td>
             <td>
-                <a th:href="${'tarefa/editar/ + tarefa.id'}" class="btn btn-default">Editar</a>
+                <a th:href="${'tarefa/editar/' + tarefa.id}" class="btn btn-default">Editar</a>
             </td>
             <td>
-                <a th:href="" class="btn btn-danger">Excluir</a>
+                <a th:href="${'tarefa/apagar/' + tarefa.id}" class="btn btn-danger">Excluir</a>
             </td>
         </tr>
     </table>

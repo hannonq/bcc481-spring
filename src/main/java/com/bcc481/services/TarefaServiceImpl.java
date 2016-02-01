@@ -32,4 +32,7 @@ public class TarefaServiceImpl implements TarefaService {
     public Tarefa saveTarefa(Tarefa tarefa){
         return this.tarefaRepository.save(tarefa);
     }
+
+    @Override
+    public void deleteTarefa(Long id){ this.tarefaRepository.delete(id);}
 }

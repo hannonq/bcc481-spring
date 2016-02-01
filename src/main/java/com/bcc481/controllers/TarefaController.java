@@ -41,19 +41,21 @@ public class TarefaController {
     //salva uma nova tarefa
     @RequestMapping(value = "tarefa", method = RequestMethod.POST)
     public String saveTarefa(Tarefa tarefa){
-        System.out.println("Service: " + tarefaService);
-        System.out.println("Tarefa = " + tarefa.toString());
         tarefaService.saveTarefa(tarefa);
 
-        System.out.println("ID da tarefa " + tarefa.getId());
-        //return "redirect:/tarefa/" + tarefa.getId();
-        return "/tarefas";
+        return "redirect:/tarefas";
     }
 
     @RequestMapping("tarefa/editar/{id}")
     public String edit(@PathVariable Long id, Model model){
         model.addAttribute("tarefa", tarefaService.getTarefaById(id));
-        return "productform";
+        return "tarefaform";
+    }
+
+    @RequestMapping("tarefa/apagar/{id}")
+    public String delete(@PathVariable Long id, Model model){
+        tarefaService.deleteTarefa(id);
+        return "redirect:/tarefas";
     }
 
     @RequestMapping("tarefa/{id}")

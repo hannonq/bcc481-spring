@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
     <meta charset="UTF-8"/>
     <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.6/css/bootstrap.min.css"
@@ -17,7 +18,7 @@
 </head>
 <body>
 <div>
-    <h2>Lista de tarefas</h2>
+    <h2>Lista de tarefas do(a) <span sec:authentication="name"></span></h2>
     <table class="table table-striped">
         <tr>
             <th>ID</th>

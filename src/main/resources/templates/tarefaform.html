@@ -18,9 +18,10 @@
                 <label class="col-sm-2 control-label">Descrição:</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" th:field="*{descricao}"/>
-                    <div class="alert alert-danger" th:if="${#fields.hasErrors('*')}">
-                        <p th:each="err : ${#fields.errors('*')}" th:text="${err}"></p>
+                    <div class="alert alert-danger" th:if="${#fields.hasErrors('dataFinalizacao')}">
+                        <p th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}"></p>
                     </div>
+
                 </div>
 
             </div>
@@ -34,9 +35,9 @@
             <div class="form-group">
                 <label class="col-sm-2 control-label">Data Finalização:</label>
                 <div class="col-sm-10">
-                    <input id="en" type="text" class="form-control" th:field="*{dataFinalizacao}" th:placeholder="yyyy-mm-dd" th:pattern="yyyy-mm-dd"/>
-                    <div class="alert alert-danger" th:if="${#fields.hasErrors('*')}">
-                        <p th:each="err : ${#fields.errors('*')}" th:text="${err}"></p>
+                    <input id="en" type="text" class="form-control" th:field="*{dataFinalizacao}" th:placeholder="yyyy-mm-dd"/>
+                    <div class="alert alert-danger" th:if="${#fields.hasErrors('dataFinalizacao')}">
+                        <p th:if="${#fields.hasErrors('dataFinalizacao')}" th:errors="*{dataFinalizacao}"></p>
                     </div>
                 </div>
             </div>

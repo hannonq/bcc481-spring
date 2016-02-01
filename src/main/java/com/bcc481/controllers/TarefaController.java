@@ -5,9 +5,13 @@ import com.bcc481.services.TarefaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import javax.validation.Valid;
 
 /**
  * Created by hannon on 29/01/16.
@@ -31,8 +35,22 @@ public class TarefaController {
     }
 
     //cria uma nova tarefa
+//    @RequestMapping(value="tarefa/nova", method=RequestMethod.GET)
+//    public String novaTarefa(Model model, BindingResult bindingResult){
+//
+//        if (bindingResult.hasErrors()) {
+//            return "tarefaform";
+//        }
+//
+//        model.addAttribute("tarefa", new Tarefa());
+//        System.out.println("Nova tarefa");
+//        return "tarefaform";
+//    }
+
+    //cria uma nova tarefa
     @RequestMapping("tarefa/nova")
     public String novaTarefa(Model model){
+
         model.addAttribute("tarefa", new Tarefa());
         System.out.println("Nova tarefa");
         return "tarefaform";
@@ -40,7 +58,12 @@ public class TarefaController {
 
     //salva uma nova tarefa
     @RequestMapping(value = "tarefa", method = RequestMethod.POST)
-    public String saveTarefa(Tarefa tarefa){
+    public String saveTarefa(@Valid @ModelAttribute("tarefa") Tarefa tarefa, BindingResult bindingResult){
+
+        if(bindingResult.hasErrors()){
+            return "tarefaform";
+        }
+
         tarefaService.saveTarefa(tarefa);
 
         return "redirect:/tarefas";

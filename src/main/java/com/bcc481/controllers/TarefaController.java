@@ -35,19 +35,6 @@ public class TarefaController {
     }
 
     //cria uma nova tarefa
-//    @RequestMapping(value="tarefa/nova", method=RequestMethod.GET)
-//    public String novaTarefa(Model model, BindingResult bindingResult){
-//
-//        if (bindingResult.hasErrors()) {
-//            return "tarefaform";
-//        }
-//
-//        model.addAttribute("tarefa", new Tarefa());
-//        System.out.println("Nova tarefa");
-//        return "tarefaform";
-//    }
-
-    //cria uma nova tarefa
     @RequestMapping("tarefa/nova")
     public String novaTarefa(Model model){
 

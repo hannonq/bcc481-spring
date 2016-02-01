@@ -27,7 +27,7 @@ public class TarefaController {
     }
 
     //lista todas as tarefas
-    @RequestMapping(value = "/tarefas", method = RequestMethod.GET)
+    @RequestMapping(value = {"/tarefas"}, method = RequestMethod.GET)
     public String list(Model model){
         model.addAttribute("tarefas", tarefaService.listAllTarefas());
         System.out.println("Returning tarefas");

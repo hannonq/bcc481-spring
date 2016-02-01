@@ -26,6 +26,7 @@ public class Tarefa {
 
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @NotNull(message = "Insira uma data")
     private Calendar dataFinalizacao;
 
     @Override
